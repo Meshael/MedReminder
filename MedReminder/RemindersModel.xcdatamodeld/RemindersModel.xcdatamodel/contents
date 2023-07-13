@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MyList" representedClassName="MyList" syncable="YES">
+        <attribute name="color" attributeType="Transformable" valueTransformerName="UIColorTransformable" customClassName="UIColor"/>
+        <attribute name="dose" attributeType="String"/>
+        <attribute name="medname" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="reminder" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Reminder" inverseName="list" inverseEntity="Reminder"/>
+    </entity>
+    <entity name="Reminder" representedClassName="Reminder" syncable="YES" codeGenerationType="class">
+        <attribute name="isCompleted" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="reminderTime" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="list" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="MyList" inverseName="reminder" inverseEntity="MyList"/>
+    </entity>
+</model>
